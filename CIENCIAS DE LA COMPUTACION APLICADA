@@ -1,0 +1,48 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.awt.*;
+import java.util.Scanner;
+import java.util.Vector;
+import java.lang.Math;
+class HelloWorld {
+    public static void main(String[] args) {
+        double a, b, c, discriminante;
+        String msg;
+        System.out.println("Y=AX^2+BX+C                     Ec (1)");
+        System.out.println("\nAplicando la derivada en ec(1) ");
+        System.out.println("Y^'=2AX+B                           Ec (2)");
+        System.out.println("\nLa ec(2), igualar a cero y despejar X");
+        System.out.println("0=2AX+B entonces 2AX = B");
+        System.out.println("X=-B/2A                             Ec (3)");
+        System.out.println("La Ec (3) reemplazar en la Ec (1)");
+        System.out.println("Y=A(-B/2A)^2+B(-B/2A)+C , simplificando A");
+        System.out.println("Y=A( B^2/(4A^2 ) )-(B^2/2A)+C");
+        System.out.println("Y=(B^2/4A)-(B^2/2A)+C, multiplicar por 2 el numerador y denominador de   B^2/2A");
+        System.out.println("Y=(B^2/4A)-(2B^2/4A)+C, una parte de la ecuacion queda como quebrado homogeneo");
+        System.out.println("Y=(-B^2)/4A+C , multiplicar por 4A el numerador y denominador de C");
+        System.out.println("Y=(-B^2/4A)+(4AC/4A)=  (-B^2+4AC)/4A, entonces Y=0");
+        System.out.println("0=(-B^2+4AC)/4A");
+        System.out.println("D=0=(-B^2)+4AC, escrito de otra manera queda (B^2)-4AC");
+
+        Scanner form = new Scanner(System.in);
+        System.out.println("\nFormula Cuadratica");
+
+        System.out.println("\nEscriba el numero 1?");
+        a = form.nextDouble();
+
+        System.out.println("\nEscriba el numero 2?");
+        b = form.nextDouble();
+
+        System.out.println("\nEscriba el numero 3?");
+        c = form.nextDouble();
+        discriminante = Math.pow(b, 2) - (4 * a * c);
+        if (discriminante == 0) {
+            msg = "entonces las raices son iguales, es decir:\nX1 = X2, existe una sola raiz";
+        } else if (discriminante > 0) {
+            msg="entonces existen dos raices X1, X2";
+        } else {
+            msg="entonces las raices son complejas";
+        }
+        System.out.println(msg + "\nla discriminante es = " + discriminante);
+    }
+}
